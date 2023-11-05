@@ -5,6 +5,7 @@ import { config } from "./config/config";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthRoute from "./components/AuthRoute";
 import Layout from "./components/Layout";
+import Todo from "./pages/Todo";
 
 initializeApp(config.firebaseConfig);
 
@@ -22,6 +23,14 @@ const Application: React.FunctionComponent<IApplicationProps> = () => {
                 <HomePage />
               </Layout>
             </AuthRoute>
+          }
+        />
+        <Route
+          path="/todo"
+          element={
+            <Layout>
+              <Todo />
+            </Layout>
           }
         />
         <Route path="/login" element={<LoginPage />} />
